@@ -213,7 +213,7 @@
   "Transform the MYSQL-POINT-AS-STRING into a suitable representation for
    PostgreSQL.
 
-  Input:   \"POINT(48.5513589 7.6926827)\" ; that's using astext(column)
+  Input:   \"POINT(48.5513589 7.6926827)\" ; that's using st_astext(column)
   Output:  (48.5513589,7.6926827)"
   (when mysql-point-as-string
     (let* ((point (subseq mysql-point-as-string 5)))
@@ -224,7 +224,7 @@
   "Transform the MYSQL-POINT-AS-STRING into a suitable representation for
    PostgreSQL.
 
-  Input:   \"LINESTRING(-87.87342467651445 45.79684462673078,-87.87170806274479 45.802110434248966)\" ; that's using astext(column)
+  Input:   \"LINESTRING(-87.87342467651445 45.79684462673078,-87.87170806274479 45.802110434248966)\" ; that's using st_astext(column)
   Output:  [(-87.87342467651445,45.79684462673078),(-87.87170806274479,45.802110434248966)]"
   (when mysql-linestring-as-string
     (let* ((data (subseq mysql-linestring-as-string
